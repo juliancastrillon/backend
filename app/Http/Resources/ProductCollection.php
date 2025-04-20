@@ -2,18 +2,30 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class ProductCollection extends ResourceCollection
 {
-    /**
-     * Transform the resource collection into an array.
-     *
-     * @return array<int|string, mixed>
-     */
-    public function toArray(Request $request): array
+    public function toArray($request): array
     {
-        return parent::toArray($request);
+        return [
+            'data' => $this->collection->transform(function ($product) {
+                return [
+                    'id'     => $product->id,
+                    'name'   => $product->name,
+                    'price'  => $product->price,
+                    'detail' => $product->detail,
+                ];
+            }),
+        ];
+    }
+
+    public function with($request)
+    {
+        return [
+            'meta' => [
+                'total' => $this->collection->count(),
+            ],
+        ];
     }
 }

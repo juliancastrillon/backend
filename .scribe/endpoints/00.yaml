@@ -1,0 +1,264 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/products
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"name":"quo","price":"228.22","detail":"Eos ab ut et illum et numquam at provident laudantium voluptas porro similique.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":2,"name":"tenetur","price":"398.22","detail":"Quis inventore cumque ut vitae culpa ut molestiae accusamus quos.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":3,"name":"distinctio","price":"70.34","detail":"Suscipit animi voluptates omnis aspernatur corporis voluptas sequi fugiat modi qui dolor.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":4,"name":"omnis","price":"304.16","detail":"Quia quasi quia vitae est repudiandae animi natus natus enim aut nam.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":5,"name":"dolor","price":"364.30","detail":"Ea dolorum ipsam est consequatur et dolores consequatur perferendis placeat sequi eos aut.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":6,"name":"dolore","price":"66.08","detail":"Autem qui voluptas eveniet voluptates quod consequatur non perspiciatis neque tenetur.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":7,"name":"hic","price":"300.32","detail":"Et dolorem dolore eum molestiae laudantium ut eveniet est.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":8,"name":"quia","price":"226.15","detail":"Maiores quaerat dolor natus sed excepturi culpa sit et.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":9,"name":"quibusdam","price":"223.10","detail":"Autem vel alias ea fuga non impedit aut iusto iusto.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":10,"name":"molestiae","price":"239.95","detail":"Dicta quis autem vero velit ab fuga laudantium et corrupti quis.","created_at":"2025-04-19T22:09:51.000000Z","updated_at":"2025-04-19T22:09:51.000000Z"},{"id":11,"name":"illo","price":"458.87","detail":"Nobis id nemo quasi molestias id est a architecto et sequi.","created_at":"2025-04-19T22:10:20.000000Z","updated_at":"2025-04-19T22:10:20.000000Z"},{"id":12,"name":"et","price":"67.24","detail":"Sit temporibus aut deserunt consequuntur quo repudiandae.","created_at":"2025-04-19T22:10:20.000000Z","updated_at":"2025-04-19T22:10:20.000000Z"},{"id":13,"name":"inventore","price":"265.60","detail":"Dolor placeat quisquam modi sequi adipisci tempore quas impedit eos nisi.","created_at":"2025-04-19T22:10:20.000000Z","updated_at":"2025-04-19T22:10:20.000000Z"},{"id":14,"name":"non","price":"238.64","detail":"Possimus commodi consequuntur rerum autem sunt ipsum.","created_at":"2025-04-19T22:10:20.000000Z","updated_at":"2025-04-19T22:10:20.000000Z"},{"id":15,"name":"nisi","price":"128.03","detail":"Quia excepturi libero laudantium labore inventore est eum.","created_at":"2025-04-19T22:10:20.000000Z","updated_at":"2025-04-19T22:10:20.000000Z"}],"links":{"first":"http:\/\/localhost\/api\/products?page=1","last":"http:\/\/localhost\/api\/products?page=8","prev":null,"next":"http:\/\/localhost\/api\/products?page=2"},"meta":{"current_page":1,"from":1,"last_page":8,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/products?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/products?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/products?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/products?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/products?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/products?page=6","label":"6","active":false},{"url":"http:\/\/localhost\/api\/products?page=7","label":"7","active":false},{"url":"http:\/\/localhost\/api\/products?page=8","label":"8","active":false},{"url":"http:\/\/localhost\/api\/products?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/products","per_page":15,"to":15,"total":110}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/products/{product_id}/edit'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show the form for editing the specified resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      product_id:
+        name: product_id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      product_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

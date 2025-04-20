@@ -1,0 +1,80 @@
+name: Productos
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/products
+    metadata:
+      groupName: Productos
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Crear un nuevo producto'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Nombre del producto.'
+        required: true
+        example: 'Lente polarizado'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      price:
+        name: price
+        description: 'Precio del producto.'
+        required: true
+        example: '99.99'
+        type: numeric
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+      detail:
+        name: detail
+        description: 'Descripción del producto.'
+        required: true
+        example: 'Protección UV'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        custom: []
+    cleanBodyParameters:
+      name: 'Lente polarizado'
+      price: '99.99'
+      detail: 'Protección UV'
+    fileParameters: []
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+            "data": {
+              "id": 1,
+              "name": "Lente polarizado",
+              "price": 99.99,
+              "detail": "Protección UV"
+            }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

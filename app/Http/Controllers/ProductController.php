@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
+use App\Http\Resources\ProductCollection;
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,54 +16,71 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::paginate();
+        return new ProductCollection($products);
     }
 
+
     /**
-     * Show the form for creating a new resource.
+     * Crear un nuevo producto
+     *
+     * @group Productos
+     * @bodyParam name string required Nombre del producto. Example: Lente polarizado
+     * @bodyParam price numeric required Precio del producto. Example: 99.99
+     * @bodyParam detail string  required Descripción del producto. Example: Protección UV
+     * @response 201 {
+     *   "data": {
+     *     "id": 1,
+     *     "name": "Lente polarizado",
+     *     "price": 99.99,
+     *     "detail": "Protección UV"
+     *   }
+     * }
      */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
+
+    public function store(StoreProductRequest $request)
+    {
+        $product = Product::create($request->validated());
+        return (new ProductResource($product))->response()->setStatusCode(201);
+    }
+    
+
+       /**
+     * Actualizar un producto existente
+     *
+     * @group Productos
+     * @urlParam id int required ID del producto. Example: 1
+     * @bodyParam name string required Nombre del producto. Example: Lente antirreflejo
+     * @bodyParam price numeric required Precio del producto. Example: 120.50
+     * @bodyParam detail string required Descripción. Example: Lente con protección azul
+     * @response 200 {
+     *   "data": {
+     *     "id": 1,
+     *     "name": "Lente antirreflejo",
+     *     "price": 120.5,
+     *     "detail": "Lente con protección azul"
+     *   }
+     * }
      */
-    public function store(Request $request)
+    public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $product->update($request->validated());
+
+        return new ProductResource($product);
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
+     * Eliminar un producto
+     *
+     * @group Productos
+     * @urlParam id int required ID del producto. Example: 1
+     * @response 204 {}
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return response()->json(null, 204);
     }
 }
